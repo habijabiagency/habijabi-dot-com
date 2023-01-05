@@ -1,11 +1,11 @@
 import React from "react";
-import { AiOutlineShoppingCart} from "react-icons/ai";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FiHeart } from "react-icons/fi";
 import { FaRegUser } from "react-icons/fa";
 
 const NavbarTop = () => {
   return (
-    <div className="flex justify-between py-2">
+    <div className="flex justify-between py-2 container mx-auto">
       <div className="flex align-middle text-3xl">
         <div>
           <AiOutlineShoppingCart />
