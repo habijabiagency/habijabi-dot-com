@@ -2,6 +2,7 @@ import React from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FiHeart } from "react-icons/fi";
 import { FaRegUser } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const NavbarTop = () => {
   return (
@@ -10,7 +11,7 @@ const NavbarTop = () => {
         <div>
           <AiOutlineShoppingCart />
         </div>
-        <div className="text-2xl">Habijabi.com</div>
+        <Link to='/' className="text-2xl">Habijabi.com</Link>
       </div>
       <div className="flex">
         <div className="form-control">
