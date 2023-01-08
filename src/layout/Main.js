@@ -5,6 +5,7 @@ import Navbar from '../Components/Navbar/Navbar';
 import NavbarTop from '../Components/NavbarTop/NavbarTop';
 import HomeSlider from '../Components/HomeSlider/HomeSlider';
 import MostViewedSlider from '../Components/MostViewdSlider/MostViewedSlider';
+import TopProducts from '../Components/TopProducts/TopProducts';
 
 const Main = () => {
     return (
@@ -13,6 +14,7 @@ const Main = () => {
             <Navbar />
             <HomeSlider />
             <MostViewedSlider />
+            <TopProducts />
             <Outlet />
             <Footer />
 
