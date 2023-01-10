@@ -1,0 +1,14 @@
+button:disabled.tab {
+    background: linear-gradient(245.39deg,#fc65ed -35.14%,#0500ff 143.06%);
+    color: #fff;}
+
+    button.tab {
+        background-color: #d3d3d3;
+        background-color: hsla(0,0%,100%,.1);
+        border: none;
+        color: #888;
+        cursor: pointer;
+        padding: 25px;
+        transition: all .5s ease-out;
+        width: 100%;
+}

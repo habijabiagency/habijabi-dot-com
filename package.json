@@ -11,9 +11,16 @@
     "react-countdown": "^2.3.5",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
+<<<<<<< HEAD
+    "react-owl-carousel": "^2.3.3",
+    "react-router-dom": "^6.6.1",
+    "react-scripts": "5.0.1",
+    "react-tabs": "^6.0.0",
+=======
     "react-moment": "^1.1.2",
     "react-router-dom": "^6.6.1",
     "react-scripts": "5.0.1",
+>>>>>>> 506f8d8b692ee7d4b41ee07c3208d7abc1eb636a
     "swiper": "^8.4.5",
     "web-vitals": "^2.1.4"
   },
