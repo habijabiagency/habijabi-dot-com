@@ -7,6 +7,7 @@ import HomeSlider from '../Components/HomeSlider/HomeSlider';
 import MostViewedSlider from '../Components/MostViewdSlider/MostViewedSlider';
 import TopProducts from '../Components/TopProducts/TopProducts';
 import ExclusiveProducts from '../Components/ExclusiveProducts/ExclusiveProducts';
+import DealOfTheDay from '../Components/DealOfTheDay/DealOfTheDay';
 
 const Main = () => {
     return (
@@ -17,6 +18,7 @@ const Main = () => {
             <MostViewedSlider />
             <TopProducts />
             <ExclusiveProducts />
+            <DealOfTheDay />
             <Outlet />
             <Footer />
 
