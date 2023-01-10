@@ -1,83 +1,117 @@
-import React, { useRef, useState } from 'react';
-import SwiperCore, { Virtual, Navigation, Pagination } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-
-import './MostViewedSlider.css';
-
-// install Virtual module
-SwiperCore.use([Virtual, Navigation, Pagination]);
+import React, { useEffect, useRef, useState } from 'react';
+import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
+import './MostViewedSlider.css'
 
 const MostViewedSlider = () => {
-    const [swiperRef, setSwiperRef] = useState(null);
-    // const appendNumber = useRef(500);
-    // const prependNumber = useRef(1);
+    const [slideLength, setSlideLength] = useState(null)
+    const [currentSlide, setCurrentSlide] = useState(1)
 
-    // Create array with 500 slides
-    const [slides, setSlides] = useState(
-        Array.from({ length: 500 }).map((_, index) => `Slide ${index + 1}`)
-    );
 
-    // const prepend = () => {
-    //     setSlides([
-    //         `Slide ${prependNumber.current - 2}`,
-    //         `Slide ${prependNumber.current - 1}`,
-    //         ...slides,
-    //     ]);
-    //     prependNumber.current = prependNumber.current - 2;
-    //     swiperRef.slideTo(swiperRef.activeIndex + 2, 0);
-    // };
+    const items = [
+        {
+            title: "Printed Chiffon",
+            viewed: "532 viewed",
+            img: "https://images.othoba.com/images/thumbs/0350769_proton-m-earphone-neck-band-p5-blue.jpeg"
+        },
+        {
+            title: "Printed Chiffon",
+            viewed: "532 viewed",
+            img: "https://images.othoba.com/images/thumbs/0350769_proton-m-earphone-neck-band-p5-blue.jpeg"
+        },
+        {
+            title: "Printed Chiffon",
+            viewed: "532 viewed",
+            img: "https://images.othoba.com/images/thumbs/0350769_proton-m-earphone-neck-band-p5-blue.jpeg"
+        },
+        {
+            title: "Printed Chiffon",
+            viewed: "532 viewed",
+            img: "https://images.othoba.com/images/thumbs/0350769_proton-m-earphone-neck-band-p5-blue.jpeg"
+        },
+        {
+            title: "Printed Chiffon",
+            viewed: "532 viewed",
+            img: "https://images.othoba.com/images/thumbs/0350769_proton-m-earphone-neck-band-p5-blue.jpeg"
+        },
+        {
+            title: "Printed Chiffon",
+            viewed: "532 viewed",
+            img: "https://images.othoba.com/images/thumbs/0350769_proton-m-earphone-neck-band-p5-blue.jpeg"
+        },
+        {
+            title: "Printed Chiffon",
+            viewed: "532 viewed",
+            img: "https://images.othoba.com/images/thumbs/0350769_proton-m-earphone-neck-band-p5-blue.jpeg"
+        },
+        {
+            title: "Colouring Chiffon",
+            viewed: "532 viewed",
+            img: "https://images.othoba.com/images/thumbs/0350769_proton-m-earphone-neck-band-p5-blue.jpeg"
+        },
+    ]
 
-    // const append = () => {
-    //     setSlides([...slides, 'Slide ' + ++appendNumber.current]);
-    // };
 
-    const slideTo = (index) => {
-        swiperRef.slideTo(index - 1, 0);
-    };
+    useEffect(() => {
+        if (items.length !== 0) {
+            setSlideLength(items.length)
+        }
+    }, [items.length])
+    console.log(slideLength);
+
+    const slidingContainer = useRef(null)
+    console.log(slidingContainer.current);
+
+    function moveLeft() {
+        if (currentSlide < items.length) {
+            slidingContainer.current.style.transform = `translateX(-${200 * currentSlide - 200}px)`
+            setCurrentSlide(currentSlide + 1)
+        }
+        // else {
+        //     setCurrentSlide(items.length)
+        //     slidingContainer.current.style.transform = `translateX(-${200 * currentSlide}px)`
+        // }
+    }
+
+    function moveRight() {
+        if (currentSlide > 1) {
+            slidingContainer.current.style.transform = `translateX(${200 * currentSlide + 200}px)`
+            setCurrentSlide(currentSlide - 1)
+        }
+        // else {
+        //     setCurrentSlide(1)
+        //     slidingContainer.current.style.transform = `translateX(${0 * currentSlide}px)`
+        // }
+    }
 
     return (
-        <>
-            <Swiper
-                onSwiper={setSwiperRef}
-                slidesPerView={5}
-                centeredSlides={true}
-                spaceBetween={30}
-                pagination={{
-                    type: 'fraction',
-                }}
-                navigation={true}
-                virtual
-            >
-                {slides.map((slideContent, index) => (
-                    <SwiperSlide key={slideContent} virtualIndex={index}>
-                        {slideContent}
-                    </SwiperSlide>
-                ))}
-            </Swiper>
+        <div className='container mx-auto flex my-3'>
+            <div className='slide-images-navigation'>
+                <h3 className='text-3xl font-bold text-center my-14'>Most Viewed</h3>
+                <div className='flex items-center justify-center my-5'>
+                    <button className='text-3xl hover:bg-slate-400' onClick={moveLeft}><BiLeftArrow /></button>
+                    <button className='text-3xl hover:bg-slate-400' onClick={moveRight}><BiRightArrow /></button>
+                </div>
+            </div>
+            <div className='slide-images-cards'>
+                <div className='sliding-container' ref={slidingContainer}>
+                    <div className='flex flex-nowrap'>
+                        {
+                            items.map((item, index) =>
+                                <div key={index} className="card w-52 bg-base-100 shadow-xl">
 
-            <p className="append-buttons">
-                {/* <button onClick={() => prepend()} className="prepend-2-slides">
-                    Prepend 2 Slides
-                </button> */}
-                <button onClick={() => slideTo(1)} className="prepend-slide">
-                    Slide 1
-                </button>
-                <button onClick={() => slideTo(250)} className="slide-250">
-                    Slide 250
-                </button>
-                <button onClick={() => slideTo(500)} className="slide-500">
-                    Slide 500
-                </button>
-                {/* <button onClick={() => append()} className="append-slides">
-                    Append Slide
-                </button> */}
-            </p>
-        </>
+                                    <div className="card-body items-center text-center">
+                                        <h2 className="card-title">{item.title}</h2>
+                                        <p>{item.viewed}</p>
+                                    </div>
+                                    <figure className="px-10 pt-10">
+                                        <img src={item.img} alt="Shoes" className="rounded-xl" />
+                                    </figure>
+                                </div>)
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
     );
 };
 

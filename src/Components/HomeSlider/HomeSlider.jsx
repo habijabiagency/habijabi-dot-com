@@ -33,23 +33,23 @@ const HomeSlider = () => {
   ]
   return (
     <div className="mt-4 mx-auto container">
-    <div className=" display-slider font-semibold  text-white">
-      <div className="slider-section">
-        <Slider items={items}></Slider>
-      </div>
-      <div className="best-slider-item">
-        <img src={imageurl} className="rounded-box" />
-        <div className="best-slider-item-text">
-          <div className="text-s[16px] md:text-[20px]">Home Decor</div>
-          <div className="text-[30px] mt-2">
-            The Best clock creative Furniture
+      <div className=" display-slider font-semibold  text-white">
+        <div className="slider-section">
+          <Slider items={items}></Slider>
+        </div>
+        <div className="best-slider-item">
+          <img src={imageurl} className="rounded-box" alt="" />
+          <div className="best-slider-item-text">
+            <div className="text-s[16px] md:text-[20px]">Home Decor</div>
+            <div className="text-[30px] mt-2">
+              The Best clock creative Furniture
+            </div>
+            <button className="btn btn-primary mb-5 mt-5 text-white bg-red-500 hover:bg-red-700 border-none">
+              Shop now
+            </button>
           </div>
-          <button className="btn btn-primary mb-5 mt-5 text-white bg-red-500 hover:bg-red-700 border-none">
-            Shop now
-          </button>
         </div>
       </div>
-    </div>
 
     </div>
   );
