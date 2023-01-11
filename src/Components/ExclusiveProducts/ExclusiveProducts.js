@@ -6,27 +6,29 @@ const ExclusiveProducts = () => {
     const tabs = [
         {
             id: 1,
-            tabTitle: 'Tab 1',
+            tabTitle: 'New Arrival',
             title: 'Title 1',
-            content: 'Las tabs se generan automáticamente a partir de un array de objetos, el cual tiene las propiedades: id, tabTitle, title y content.'
+            content: "$39.00"
+
+
         },
         {
             id: 2,
-            tabTitle: 'Tab 2',
+            tabTitle: 'Best Sellers',
             title: 'Title 2',
-            content: 'Contenido de tab 2.'
+            content: "$39.00"
         },
         {
             id: 3,
-            tabTitle: 'Tab 3',
+            tabTitle: 'Featured',
             title: 'Title 3',
-            content: 'Contenido de tab 3.'
+            content: "$39.00"
         },
         {
             id: 4,
-            tabTitle: 'Tab 4',
+            tabTitle: 'Special Offer',
             title: 'Title 4',
-            content: 'Contenido de tab 4.'
+            content: "$39.00"
         }
     ];
 
@@ -36,8 +38,8 @@ const ExclusiveProducts = () => {
 
     return (
         <div className='container mx-auto'>
-
-            <div className='flex'>
+            <h1 className='text-center text-2xl font-bold my-4'>Exclusive Products</h1>
+            <div className='flex justify-center items-center'>
                 {tabs.map((tab, i) =>
                     <button className='tab' key={i} id={tab.id} disabled={currentTab === `${tab.id}`} onClick={(handleTabClick)}>{tab.tabTitle}</button>
                 )}
@@ -45,7 +47,15 @@ const ExclusiveProducts = () => {
             <div className='content'>
                 {tabs.map((tab, i) =>
                     <div key={i}>
-                        {currentTab === `${tab.id}` && <div><p className='title'>{tab.title}</p><p>{tab.content}</p></div>}
+                        {currentTab === `${tab.id}` && <div className="card w-96 bg-base-100 shadow-xl">
+                            <figure className="px-10 pt-10">
+                                <img src="https://placeimg.com/400/225/arch" alt="Shoes" className="rounded-xl" />
+                            </figure>
+                            <div className="card-body ">
+                                <h2 className="card-title">{tab.title}</h2>
+                                <p className='text-red-500'>{tab.content}</p>
+                            </div>
+                        </div>}
                     </div>
                 )}
             </div>
