@@ -32,7 +32,7 @@ const HomeSlider = () => {
     },
   ]
   return (
-    <div className="mt-4 mx-auto container">
+    <div className="mt-4 mx-auto container z-0">
       <div className=" display-slider font-semibold  text-white">
         <div className="slider-section">
           <Slider items={items}></Slider>

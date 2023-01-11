@@ -8,7 +8,6 @@ button:disabled.tab {
         border: none;
         color: #888;
         cursor: pointer;
-        padding: 25px;
         transition: all .5s ease-out;
         width: 100%;
 }
