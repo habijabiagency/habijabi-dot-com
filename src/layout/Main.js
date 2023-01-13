@@ -9,18 +9,13 @@ import TopProducts from '../Components/TopProducts/TopProducts';
 import ExclusiveProducts from '../Components/ExclusiveProducts/ExclusiveProducts';
 import DealOfTheDay from '../Components/DealOfTheDay/DealOfTheDay';
 import TopCategories from '../Components/TopCategories/TopCategories';
+import Home from '../Pages/Home/Home';
 
 const Main = () => {
     return (
         <div>
             <NavbarTop />
             <Navbar />
-            <HomeSlider />
-            <TopCategories />
-            <MostViewedSlider />
-            <TopProducts />
-            <ExclusiveProducts />
-            <DealOfTheDay />
             <Outlet />
             <Footer />
 
