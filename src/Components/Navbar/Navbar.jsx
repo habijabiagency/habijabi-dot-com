@@ -12,9 +12,9 @@ const Navbar = () => {
                 <GiHamburgerMenu className='ml-4 ' />
             </div>
             <div className='grow flex'>
-                <Link className="flex items-center px-4 py-2 bg-gray-50 hover:bg-gray-100" to="#"><div>Home</div> <div className="link-caret-icon"><RxCaretDown /></div></Link>
+                <Link className="flex items-center px-4 py-2 bg-gray-50 hover:bg-gray-100" to="/"><div>Home</div> <div className="link-caret-icon"><RxCaretDown /></div></Link>
                 <Link className="flex items-center px-4 py-2 bg-gray-50 hover:bg-gray-100" to="#"><div>Pages</div> <div className="link-caret-icon"><RxCaretDown /></div></Link>
-                <Link className="flex items-center px-4 py-2 bg-gray-50 hover:bg-gray-100" to="#"><div>Products</div> <div className="link-caret-icon"><RxCaretDown /></div></Link>
+                <Link className="flex items-center px-4 py-2 bg-gray-50 hover:bg-gray-100" to="/all-products"><div>Products</div> <div className="link-caret-icon"><RxCaretDown /></div></Link>
                 <Link className="flex items-center px-4 py-2 bg-gray-50 hover:bg-gray-100" to="#"><div>Blog</div> <div className="link-caret-icon"><RxCaretDown /></div></Link>
                 <Link className="flex items-center px-4 py-2 bg-gray-50 hover:bg-gray-100" to="#"><div>Shop</div> <div className="link-caret-icon"><RxCaretDown /></div></Link>
                 <Link className="flex items-center px-4 py-2 bg-gray-50 hover:bg-gray-100" to="#"><div>Contact us</div> <div className="link-caret-icon"><RxCaretDown /></div></Link>
